@@ -16,14 +16,13 @@ Build Docker Image
 $ docker-compose build
 ```
 
-
-Run Dynamo Containerを起動
+Run dynamo-local with Docker Container
 
 ``` bash
 $ docker-compose up
 ```
 
-table listを表示
+Show table list in dynamo.
 
 ``` bash
 $ aws dynamodb list-tables --endpoint-url http://192.168.99.100:8080
@@ -32,13 +31,13 @@ $ aws dynamodb list-tables --endpoint-url http://192.168.99.100:8080
 }
 ```
 
-テーブル作成
+Create table
 
 ``` bash
 $ aws dynamodb create-table --endpoint-url http://192.168.99.100:8080 --table-name test --attribute-definitions AttributeName=testId,AttributeType=S --key-schema AttributeName=testId,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1
 ```
 
-table listを表示
+Show table list in dynamo.
 
 ``` bash
 $ aws dynamodb list-tables --endpoint-url http://192.168.99.100:8080
